@@ -1,0 +1,184 @@
+@use './var'as var;
+@use './mixin' as mixin;
+@use './basic';
+
+// -------------------------------------------class-setting
+.section1{
+  @include mixin.size(85%, 15%);
+  @include mixin.flex(space-around, center);
+  // border: var.$solid-blue;
+}
+
+.section2{
+  @include mixin.size(85%, 75%);
+  background-color: var.$col-8;
+  position: relative;
+}
+
+.no-bgc-section2{
+  @include mixin.size(85%, 75%);
+  position: relative;
+}
+
+
+.title-txt{
+  @include mixin.font(3rem, 700, var.$col-dark-gray);
+}
+
+.sub-txt{
+  @include mixin.font(2rem, 600, var.$col-dark-gray);
+}
+
+
+.circle-menu{
+  background-color: var.$col-2;
+  border-radius: 50%;
+  position: absolute;
+  @include mixin.font(0.8rem, 500, var.$col-dark-gray);
+  @include mixin.flex(center, center);
+  text-align: center
+}
+
+// -------------------------------------------class-setting
+
+#root{
+  @include mixin.root;
+  @include mixin.flex(center, center);
+  background-color: var.$col-gray;
+  font-family: 'Noto Serif', serif;
+  font-style: italic;
+}
+
+#container{
+  @include mixin.size(var.$per-100, var.$per-100);
+  @include mixin.flex(center, center, column);
+}
+
+#section1{
+  &> div{
+    @include mixin.size(30%, 90%);
+    @include mixin.flex(space-around, center, column);
+  }
+  
+  &>div:nth-child(1){
+    
+    &>div:nth-child(1){
+      @include mixin.size(var.$per-100, 30%);
+      @include mixin.flex(flex-start, center);
+    }
+    
+    &>div:nth-child(2){
+      @include mixin.size(80%, 30%);
+      @include mixin.flex(flex-end, center);
+    }
+    
+    &>div:nth-child(3){
+      @include mixin.size(var.$per-100, 30%);
+      @include mixin.flex(center, center);
+    }
+  }
+}
+
+#section2{
+  .media-menu{
+    @include mixin.size(90px,90px);
+    left: 20%;
+    top: 15%;
+  }
+
+  .gallery-menu{
+    @include mixin.size(100px,100px);
+    left: 50%;
+    top: 35%;
+  }
+
+  .life-menu{
+    @include mixin.size(125px,125px);
+    left: 80%;
+    top: 15%;
+  }
+}
+
+#title-box{
+  @include mixin.size(var.$per-100, var.$per-100);
+  @include mixin.flex(space-around, center, column);
+
+  &>div:nth-child(1){
+    @include mixin.size(var.$per-100, 50%);
+  }
+}
+
+#content-box{
+  @include mixin.size(var.$per-100, var.$per-100);
+  // border: var.$solid-blue;
+  @include mixin.flex(space-around, center);
+
+  @for $i from 1 through 3{
+    &>div:nth-child(#{$i}) {
+      // border: var.$solid-blue;
+      position: absolute;
+      @include mixin.flex(space-between, center);
+
+      &>div:nth-child(1){
+        @include mixin.size(60%,90%);
+        @include mixin.font(1rem, 500, var.$col-dark-gray);
+        @include mixin.flex(center, center);
+        position: relative;
+        z-index: 5;
+      }
+
+      &>div:nth-child(2){
+        position: absolute;
+        z-index: 0;
+      }
+    }
+  }
+  
+
+  &>div:nth-child(1){
+    @include mixin.size(30%,40%);
+    left: 0%;
+    top: 0%;
+
+    &>div:last-child{
+      @include mixin.box-style(40%, 80%, var.$col-1, 45%);
+      left: 65%;
+    }
+  }
+
+  &>div:nth-child(2){
+    @include mixin.size(35%,40%);
+    left: 10%;
+    bottom: 5%;
+
+    &>div:last-child{
+      @include mixin.box-style(45%, 90%, var.$col-1, 50%);
+      left: 60%;
+    }
+  }
+
+  &>div:nth-child(3){
+    @include mixin.size(45%,50%);
+    right: 7%;
+
+    &>div:last-child{
+      @include mixin.box-style(45%, 50%, var.$col-1, 45px);
+      left: 60%;
+      bottom: 40%;
+    }
+  }
+}
+
+  #menu{
+    @include mixin.size(5%,20%);
+    @include mixin.flex(space-around, center);
+    @include mixin.menu-style(var.$col-4, 0.5);
+    left: 87.5%;
+    bottom: 57%;
+  }
+
+  #mouse-over-menu{
+    @include mixin.size(80%,80%);
+    @include mixin.flex(space-between, center, column);
+  }
+
