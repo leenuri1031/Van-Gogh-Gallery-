@@ -4,6 +4,7 @@ import "./css/App.css";
 import MainSection1Content from "./module/main_section1_content";
 import BasicSection from "./module/BasicSection";
 import GallerySection from "./module/GallerySection";
+import Media from "./module/Media";
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
             <Route path="/" element={<MainSection1Content />}></Route>
             <Route path="/life/*" element={<BasicSection />}></Route>
             <Route path="/gallery/*" element={<GallerySection />}></Route>
+            <Route path="/media/*" element={<Media/>}></Route>
           </Routes>
         </div>
       </HashRouter>

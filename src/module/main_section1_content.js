@@ -31,6 +31,7 @@ class MainSection1Content extends Component {
           </div>
         </section>
         <section id="section2" className="section2">
+          <Link to={"/media/"}>
           <div
             onMouseOver={mouseover}
             onMouseLeave={mouseout1}
@@ -38,6 +39,7 @@ class MainSection1Content extends Component {
           >
             {this.state.txt[2]}
           </div>
+          </Link>
           <Link to={"/gallery/main"}>
             <div
               onMouseOver={mouseover}

@@ -3,29 +3,9 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.mouseout3 = exports.mouseout2 = exports.mouseout1 = exports.mouseover = exports.menuOut = exports.menuEnter = void 0;
+exports.mouseout3 = exports.mouseout2 = exports.mouseout1 = exports.mouseover = void 0;
 
 var _function_obj = require("./function_obj");
-
-var menuEnter = function menuEnter(e) {
-  _function_obj.functionObj.size(e.target, "30%", "70%");
-
-  e.target.style.left = "62.5%";
-  e.target.style.bottom = "10%";
-  e.target.innerHTML = "";
-};
-
-exports.menuEnter = menuEnter;
-
-var menuOut = function menuOut(e) {
-  _function_obj.functionObj.size(e.target, "5%", "20%");
-
-  e.target.style.left = "87.5%";
-  e.target.style.bottom = "57%";
-  e.target.innerHTML = "Gallery Info";
-};
-
-exports.menuOut = menuOut;
 
 var mouseover = function mouseover(e) {
   _function_obj.functionObj.size(e.target, "140px", "140px");
