@@ -11,11 +11,9 @@ import { GalleryContents1,GalleryContents2,GalleryContents3,GalleryContents4,Gal
 //       "Auvers-Sur-Oise"
 // ]
 
-// console.log(Array.isArray(subText));
 class GallerySection extends Component {
 
   render() {
-    // console.log(window.location.hash);
     return (
       <>
         <section className="section1">
@@ -24,10 +22,10 @@ class GallerySection extends Component {
         <section className="no-bgc-section2">
           <div  id="gallery-main">
             <GalleryContents1></GalleryContents1>
-            {/* <GalleryContents2></GalleryContents2>
+            <GalleryContents2></GalleryContents2>
             <GalleryContents3></GalleryContents3>
             <GalleryContents4></GalleryContents4>
-            <GalleryContents5></GalleryContents5> */}
+            <GalleryContents5></GalleryContents5>
           </div>
           <Menu></Menu>
         </section>

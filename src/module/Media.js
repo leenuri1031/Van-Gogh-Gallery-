@@ -10,13 +10,6 @@ class Media extends Component {
         <TitleText></TitleText>
       </section>
       <section className="no-bgc-section2">
-          <button>left</button>
-          <div className="slide-container">
-            <div data-slide="0">0</div>
-            <div data-slide="1">1</div>
-            <div data-slide="2">2</div>
-          </div>
-          <button>right</button>
         <Menu></Menu>
       </section>
       </>

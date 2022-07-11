@@ -319,7 +319,6 @@
     @include mixin.size(17%, 80%);
     @include mixin.flex(space-around, center, column);
     border: var.$solid-blue;
-    
   }
 
 
