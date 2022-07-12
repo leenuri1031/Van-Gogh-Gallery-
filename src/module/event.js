@@ -21,7 +21,7 @@ let boolean = true;
 
 export const slider = (e) => {
   if(boolean === true){
-    heightValue = heightValue + 230;
+    heightValue = heightValue + 110;
     e.target.scrollTo({top : heightValue , behavior : "smooth"})
     if(heightValue >= 900){
       boolean = false;
@@ -31,6 +31,23 @@ export const slider = (e) => {
     e.target.scrollTo({top : heightValue , behavior : "smooth"});
     boolean = true;
   }
+}
+
+export const moving = (e)=> {
+
+  let value = 0;
+  setInterval(function() {
+    e.target.style.transform = 'translate3d(0px,-'+110*(value+1)+'px, 0px)';
+    e.target.style.transition = '0.5s';
+  value++;
+  if(value === 4){
+    setTimeout(function(){
+      e.target.style.transition = '0s';
+      e.target.style.transform = 'translate3d(0px,0px, 0px)';
+    }, 201);
+    value = 0;
+  }
+}, 1000);
 }
 
 // export const slideTimer = setInterval(slider, 100);

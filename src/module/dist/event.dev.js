@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.slider = exports.mouseout3 = exports.mouseout2 = exports.mouseout1 = exports.mouseover = void 0;
+exports.moving = exports.slider = exports.mouseout3 = exports.mouseout2 = exports.mouseout1 = exports.mouseover = void 0;
 
 var _function_obj = require("./function_obj");
 
@@ -35,7 +35,7 @@ var _boolean = true;
 
 var slider = function slider(e) {
   if (_boolean === true) {
-    heightValue = heightValue + 230;
+    heightValue = heightValue + 110;
     e.target.scrollTo({
       top: heightValue,
       behavior: "smooth"
@@ -52,7 +52,26 @@ var slider = function slider(e) {
     });
     _boolean = true;
   }
+};
+
+exports.slider = slider;
+
+var moving = function moving(e) {
+  var value = 0;
+  setInterval(function () {
+    e.target.style.transform = 'translate3d(0px,-' + 110 * (value + 1) + 'px, 0px)';
+    e.target.style.transition = '0.5s';
+    value++;
+
+    if (value === 4) {
+      setTimeout(function () {
+        e.target.style.transition = '0s';
+        e.target.style.transform = 'translate3d(0px,0px, 0px)';
+      }, 201);
+      value = 0;
+    }
+  }, 1000);
 }; // export const slideTimer = setInterval(slider, 100);
 
 
-exports.slider = slider;
+exports.moving = moving;
